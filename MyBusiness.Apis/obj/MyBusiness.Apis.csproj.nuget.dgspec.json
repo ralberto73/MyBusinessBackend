@@ -31,7 +31,14 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Working\\MyBusinessBackend\\MyBusiness.DataAccess\\MyBusiness.DataAccess.csproj": {
+                "projectPath": "D:\\Working\\MyBusinessBackend\\MyBusiness.DataAccess\\MyBusiness.DataAccess.csproj"
+              },
+              "D:\\Working\\MyBusinessBackend\\MyBusiness.Models\\MyBusiness.Models.csproj": {
+                "projectPath": "D:\\Working\\MyBusinessBackend\\MyBusiness.Models\\MyBusiness.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -77,6 +84,132 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Working\\MyBusinessBackend\\MyBusiness.DataAccess\\MyBusiness.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Working\\MyBusinessBackend\\MyBusiness.DataAccess\\MyBusiness.DataAccess.csproj",
+        "projectName": "MyBusiness.DataAccess",
+        "projectPath": "D:\\Working\\MyBusinessBackend\\MyBusiness.DataAccess\\MyBusiness.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\ralbe\\.nuget\\packages\\",
+        "outputPath": "D:\\Working\\MyBusinessBackend\\MyBusiness.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ralbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\Working\\MyBusinessBackend\\MyBusiness.Models\\MyBusiness.Models.csproj": {
+                "projectPath": "D:\\Working\\MyBusinessBackend\\MyBusiness.Models\\MyBusiness.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Working\\MyBusinessBackend\\MyBusiness.Models\\MyBusiness.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Working\\MyBusinessBackend\\MyBusiness.Models\\MyBusiness.Models.csproj",
+        "projectName": "MyBusiness.Models",
+        "projectPath": "D:\\Working\\MyBusinessBackend\\MyBusiness.Models\\MyBusiness.Models.csproj",
+        "packagesPath": "C:\\Users\\ralbe\\.nuget\\packages\\",
+        "outputPath": "D:\\Working\\MyBusinessBackend\\MyBusiness.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ralbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

@@ -13,10 +13,10 @@ namespace MyBusiness.DataAccess
 
         public string Connection_string { get; }
 
-        public List<Product> GetAll() {
+        //public List<Product> GetAll() {
 
-            return new List<Product>() { new Product { ProductId = 1, ProdCategoryId = 1, ProductName = "Product 1", CreatedBy = "sa", UpdatedBy = "sa", 
-                       CreationDate = DateTime.Now  , LastUpdateDate = DateTime.Now  } }; 
-        }
+        //    return new List<Product>() { new Product { ProductId = 1, ProdCategoryId = 1, ProductName = "Product 1", CreatedBy = "sa", UpdatedBy = "sa", 
+        //               CreationDate = DateTime.Now  , LastUpdateDate = DateTime.Now  } }; 
+        //}
     }
 }

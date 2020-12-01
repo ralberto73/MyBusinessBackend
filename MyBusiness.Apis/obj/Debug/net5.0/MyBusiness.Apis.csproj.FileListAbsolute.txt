@@ -23,7 +23,6 @@ D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.Ge
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.AssemblyInfoInputs.cache
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.AssemblyInfo.cs
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.csproj.CoreCompileInputs.cache
-D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.MvcApplicationPartsAssemblyInfo.cs
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.MvcApplicationPartsAssemblyInfo.cache
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\staticwebassets\MyBusiness.Apis.StaticWebAssets.Manifest.cache
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\staticwebassets\MyBusiness.Apis.StaticWebAssets.xml
@@ -34,3 +33,14 @@ D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.dl
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\ref\MyBusiness.Apis.dll
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.pdb
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.genruntimeconfig.cache
+D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.csprojAssemblyReference.cache
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\System.Data.SqlClient.dll
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\MyBusiness.DataAccess.dll
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\MyBusiness.Models.dll
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\MyBusiness.DataAccess.pdb
+D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\MyBusiness.Models.pdb
