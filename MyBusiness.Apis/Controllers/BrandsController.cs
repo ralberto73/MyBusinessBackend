@@ -18,10 +18,10 @@ namespace MyBusiness.Apis.Controllers
         {
             _data_repository = dataRepository;
         }
-        
+
         // GET: BrandsController
         [HttpGet]
-        public IEnumerable<Brand> Get()
+        public IEnumerable<Brand> GetAll()
         {
             return _data_repository.Brand.GetAll();
             //var rng = new Random();
@@ -34,6 +34,24 @@ namespace MyBusiness.Apis.Controllers
             //.ToArray();
         }
 
-        
-    }
+        [HttpPost]
+        public async Task<IActionResult> CreateBrand([FromBody] Brand new_barnd)
+        {
+            return Ok();
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateBrand([FromBody] Brand new_barnd)
+        {
+            return Ok();
+        } 
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBrand([FromRoute] int  id)
+        {
+            return Ok();
+        }
+
+    }    
+   
 }
