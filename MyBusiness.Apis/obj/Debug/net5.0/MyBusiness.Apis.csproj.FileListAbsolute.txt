@@ -19,7 +19,6 @@ D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\Swashbuckle.AspNet
 D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.csprojAssemblyReference.cache
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.GeneratedMSBuildEditorConfig.editorconfig
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.AssemblyInfoInputs.cache
 D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.AssemblyInfo.cs
