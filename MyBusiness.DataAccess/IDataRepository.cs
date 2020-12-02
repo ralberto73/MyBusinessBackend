@@ -2,9 +2,14 @@
 {
     public interface IDataRepository
     {
-        ProductsRepository Products { get; }
+         BrandRepository Brand { get; }
+         InsuranceRepository Insurances { get; }
+        SupplierRepository   Suppliers { get; }
+        ProductsRepository   Products { get; }
         WorkOrderRepository WorkOrders { get; }
 
-        BrandRepository Brand { get; }
+       
+
+      
     }
 }

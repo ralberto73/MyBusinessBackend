@@ -20,14 +20,14 @@ namespace MyBusiness.DataAccess
 
         public  List<Insurance> GetAll() =>  db.GetListFromSp<Insurance>("Insurances_GetAll", null, null);
 
-        public Insurance GetById(int id) 
+  /*       public Insurance GetById(int id) 
         {
            return  db.GetListFromSp<Insurance>( "Insurances_GetById" 
                                              ,new List<SqlParameter>() { new SqlParameter("@BarandID", System.Data.SqlDbType.Int) }
                                              , id).FirstOrDefault<Insurance>();
         }
 
-        public bool Update(Insurance Insurance , string user) 
+       public bool Update(Insurance Insurance , string user) 
         {
             object result = db.GetValueFromSp<int>("Insurances_Update"
                                             , new List<SqlParameter>() {  new SqlParameter("@BarandID",  System.Data.SqlDbType.Int),
@@ -56,7 +56,7 @@ namespace MyBusiness.DataAccess
                                 , Insurance.InsuranceId);
             return Convert.ToInt32(result);
         }
-
+*/
 
     }
 }
