@@ -24,24 +24,23 @@ namespace MyBusiness.Apis.Controllers
         public IEnumerable<Brand> GetAll()
         {
             return _data_repository.Brand.GetAll();
-            //var rng = new Random();
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            //{
-            //    Date = DateTime.Now.AddDays(index),
-            //    TemperatureC = rng.Next(-20, 55),
-            //    Summary = Summaries[rng.Next(Summaries.Length)]
-            //})
-            //.ToArray();
+        }
+        // GET: api/TodoItems/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Brand>> GetBrand(int id)
+        {
+     
+            return _data_repository.Brand.GetById(id);
         }
 
-        [HttpPost]
+         [HttpPost]
         public async Task<IActionResult> CreateBrand([FromBody] Brand new_barnd)
         {
             return Ok();
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateBrand([FromBody] Brand new_barnd)
+        public async Task<IActionResult> UpdateBrand([FromBody] Brand current_barnd)
         {
             return Ok();
         } 
@@ -51,6 +50,8 @@ namespace MyBusiness.Apis.Controllers
         {
             return Ok();
         }
+
+
 
     }    
    
