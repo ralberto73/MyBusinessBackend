@@ -49,11 +49,11 @@ namespace MyBusiness.DataAccess
             return Convert.ToInt32(result);
         }
 
-        public int Delete(Supplier Supplier)
+        public int Delete(int id)
         {
             Object result = db.GetValueFromSp<int>("Suppliers_Delete"
                                 , new List<SqlParameter>() { new SqlParameter("@BarandID", System.Data.SqlDbType.Int) }
-                                , Supplier.SupplierId);
+                                , id);
             return Convert.ToInt32(result);
         }
 

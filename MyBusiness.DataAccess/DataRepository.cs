@@ -26,7 +26,7 @@ namespace MyBusiness.DataAccess
             _connection_string = connection_string;
             Brand      = new BrandRepository(_connection_string);
             Insurances = new InsuranceRepository(_connection_string);
-            Suppliers = new SupplierRepository(_connection_string);
+            Suppliers  = new SupplierRepository(_connection_string);
             WorkOrders = new WorkOrderRepository(_connection_string);
             Products   = new ProductsRepository(_connection_string);
           
