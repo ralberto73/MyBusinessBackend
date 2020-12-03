@@ -6,3 +6,5 @@
 /MyBusiness.DataAccess/obj
 /MyBusiness.Models/obj
 /MyBusiness.Models/bin/Debug/netcoreapp3.1
+/MyBusiness.WebApp/bin/Debug/net5.0
+/MyBusiness.WebApp/obj
