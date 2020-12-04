@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+//using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MyBusiness.WebApp.Controllers
 {
@@ -15,13 +16,14 @@ namespace MyBusiness.WebApp.Controllers
         public UserManagerController(UserManager<IdentityUser> userManager )
         {
             _userManager = userManager;
-            var a = _userManager.Users;
+          
         }
 
         // GET: UserManagerController
         public ActionResult Index( )
         {
-            return View();
+            var a = _userManager.Users.ToList<IdentityUser>();
+            return View(a);
         }
 
         // GET: UserManagerController/Details/5
