@@ -83,6 +83,9 @@
         }
 </style>
 
+<select  asp-items="@((List<SelectListItem>)ViewData["BrandList"])" class="form-control">
+    <option value="">Pick one</option>
+</select>
 <form id="regForm" action="/action_page.php">
     <h1>Register:</h1>
     <!-- One "tab" for each step in the form: -->
