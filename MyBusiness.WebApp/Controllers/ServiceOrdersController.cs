@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using MyBusiness.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +12,12 @@ namespace MyBusiness.WebApp.Controllers
 {
     public class ServiceOrdersController : Controller
     {
+        private IDataRepository _data_repository;
+        public ServiceOrdersController(IDataRepository data_repository)
+        {
+            _data_repository = data_repository;
+        }
+
         // GET: ServiceOrdersController
         public ActionResult Index()
         {
@@ -24,8 +33,11 @@ namespace MyBusiness.WebApp.Controllers
         // GET: ServiceOrdersController/Create
         public ActionResult Create()
         {
+            fill_Data(ViewData);
             return View();
         }
+
+
 
         // POST: ServiceOrdersController/Create
         [HttpPost]
@@ -82,6 +94,43 @@ namespace MyBusiness.WebApp.Controllers
             {
                 return View();
             }
+        }
+
+        private void fill_Data(ViewDataDictionary viewData)
+        {
+            ViewData["BrandList"] = _data_repository
+                                       .Brand
+                                       .GetAll()
+                                       .Select(b => new SelectListItem
+                                       {
+                                           Value = b.BrandId.ToString(),
+                                           Text = b.BrandName
+                                       }).ToList();
+
+            ViewData["InsuranceList"] = _data_repository
+                           .Insurances
+                           .GetAll()
+                           .Select(i => new SelectListItem
+                           {
+                               Value = i.InsuranceId.ToString(),
+                               Text = i.InsuranceName
+                           }).ToList();
+            ViewData["ProductList"] = _data_repository
+                                      .Products
+                                      .GetAll()
+                                      .Select(p => new SelectListItem
+                                      {
+                                          Value = p.ProductId.ToString(),
+                                          Text = p.ProductName
+                                      }).ToList();
+            ViewData["SupplierList"] = _data_repository
+                           .Suppliers
+                           .GetAll()
+                           .Select(s => new SelectListItem
+                           {
+                               Value = s.SupplierId.ToString(),
+                               Text = s.SupplierName
+                           }).ToList();
         }
     }
 }
