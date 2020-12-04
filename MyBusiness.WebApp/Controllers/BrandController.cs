@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyBusiness.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,16 @@ namespace MyBusiness.WebApp.Controllers
 {
     public class BrandController : Controller
     {
+        private IDataRepository _data_repository;
+        public BrandController(IDataRepository data_repository)
+        {
+            _data_repository = data_repository;
+        }
+        
         // GET: BrandController
         public ActionResult Index()
         {
-            return View();
+            return View( _data_repository.Brand.GetAll());
         }
 
         // GET: BrandController/Details/5

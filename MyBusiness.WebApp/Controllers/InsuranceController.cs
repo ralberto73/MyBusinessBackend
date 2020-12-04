@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyBusiness.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,16 @@ namespace MyBusiness.WebApp.Controllers
 {
     public class InsuranceController : Controller
     {
+
+        private IDataRepository _data_repository;
+        public InsuranceController(IDataRepository data_repository)
+        {
+            _data_repository = data_repository;
+        }
         // GET: InsuranceController
         public ActionResult Index()
         {
-            return View();
+            return View(_data_repository.Insurances.GetAll());
         }
 
         // GET: InsuranceController/Details/5
