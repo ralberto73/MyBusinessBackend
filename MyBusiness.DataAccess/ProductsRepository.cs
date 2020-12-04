@@ -6,12 +6,14 @@ namespace MyBusiness.DataAccess
 {
     public class ProductsRepository
     {
+        private string _connection_string;
+        private AdoSqlHelper db = null;
         public ProductsRepository(string connection_string)
         {
-            Connection_string = connection_string;
+            this._connection_string = connection_string;
+            db = new AdoSqlHelper(connection_string);
         }
-
-        public string Connection_string { get; }
+        public List<Product> GetAll() => db.GetListFromSp<Product>("Products_GetAll", null, null);
 
         //public List<Product> GetAll() {
 

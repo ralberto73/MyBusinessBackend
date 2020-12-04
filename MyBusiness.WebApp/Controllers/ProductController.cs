@@ -17,7 +17,7 @@ namespace MyBusiness.WebApp.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(_data_repository.Products.GetAll());
         }
     }
 }
