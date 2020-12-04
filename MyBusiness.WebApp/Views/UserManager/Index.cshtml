@@ -8,12 +8,12 @@
         <td>  User Name</td>
         <td>  Email</td>
     </tr>
-    @foreach (var c in Model)
+    @foreach (var usr in Model)
     {
         <tr>
-            <td>  @c.Id </td>
-            <td>  @c.UserName</td>
-            <td>  @c.Email</td>
+            <td>  @usr.Id </td>
+            <td>  @usr.UserName</td>
+            <td>  @usr.Email</td>
         </tr>
     }
 </table>
