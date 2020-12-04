@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyBusiness.DataAccess;
 using MyBusiness.WebApp.Data;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,8 @@ namespace MyBusiness.WebApp
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddSingleton<IDataRepository>(new DataRepository(Configuration.GetConnectionString("ApplicationDBConnection")));
             services.AddControllersWithViews();
         }
 
