@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyBusiness.DataAccess;
+using MyBusiness.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,19 +35,21 @@ namespace MyBusiness.WebApp.Controllers
             return View();
         }
 
-        // POST: BrandController/Create
+        // POST: Brands/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create([Bind("BrandName")] Brand brand)
         {
-            try
+            if (ModelState.IsValid)
             {
+                int i = _data_repository.Brand.AddNew(brand, "raul");
+                // await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(brand);
         }
 
         // GET: BrandController/Edit/5
