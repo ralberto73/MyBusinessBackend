@@ -40,6 +40,10 @@ namespace MyBusiness.Models
         [Display(Name = "Part")]
         public int ProductId { get; set; }
         public string PaymentMethod { get; set; }
+
+        [Display(Name = "Insurance")]
+        public int InsuranceId { get; set; }
+
         public int SupplierId { get; set; }
         public decimal BillableAmount { get; set; }
         public decimal LaborAmount { get; set; }

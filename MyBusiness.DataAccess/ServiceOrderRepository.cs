@@ -37,6 +37,7 @@ namespace MyBusiness.DataAccess
                                                               ,new SqlParameter("@Year",                     System.Data.SqlDbType.Int)
                                                               ,new SqlParameter("@ProductId",                System.Data.SqlDbType.Int)
                                                               ,new SqlParameter("@PaymentMethod",            System.Data.SqlDbType.Char,1)
+                                                              ,new SqlParameter("@InsuranceId",               System.Data.SqlDbType.Int)
                                                               ,new SqlParameter("@SupplierId",               System.Data.SqlDbType.Int)                                                             
                                                               ,new SqlParameter("@BillableAmount",           System.Data.SqlDbType.Decimal,18)
                                                               ,new SqlParameter("@LaborAmount",              System.Data.SqlDbType.Decimal,18)
@@ -61,6 +62,7 @@ namespace MyBusiness.DataAccess
                                 , new_service.Year
                                 , new_service.ProductId
                                 , new_service.PaymentMethod
+                                , new_service.InsuranceId
                                 , new_service.SupplierId
                                 , new_service.BillableAmount
                                 , new_service.LaborAmount

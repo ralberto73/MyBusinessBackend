@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using MyBusiness.DataAccess;
+using MyBusiness.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,19 +40,18 @@ namespace MyBusiness.WebApp.Controllers
 
 
 
-        // POST: ServiceOrdersController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+
+        public async Task<IActionResult> Create([Bind ("Contact,Email,PhoneNumber,AddressLine1,AddressLine2,City,State,ZipCode,BrandId,Model,SubModel,Year,ProductId,PaymentMethod,InsuranceId,SupplierId,BillableAmount,LaborAmount,PartCost")] ServiceOrder serviceOrder)
         {
-            try
+            if (ModelState.IsValid)
             {
+               // int i = _data_repository.Se.AddNew(serviceOrder);
+                // await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(serviceOrder);
         }
 
         // GET: ServiceOrdersController/Edit/5
@@ -131,6 +131,12 @@ namespace MyBusiness.WebApp.Controllers
                                Value = s.SupplierId.ToString(),
                                Text = s.SupplierName
                            }).ToList();
+            ViewData["PaymentMethod"] = new List<SelectListItem>() {
+                                                new SelectListItem { Value="-" ,Text = "Select Payment Method" },
+                                                new SelectListItem { Value="P" ,Text = "Personal Payment" },
+                                                new SelectListItem { Value="I" ,Text = "Insurance" }
+                                            };
+
         }
     }
 }
