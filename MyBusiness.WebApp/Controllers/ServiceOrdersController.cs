@@ -47,8 +47,11 @@ namespace MyBusiness.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-               // int i = _data_repository.Se.AddNew(serviceOrder);
+                // int i = _data_repository.Se.AddNew(serviceOrder);
                 // await _context.SaveChangesAsync();
+                serviceOrder.CreatedBy = "kundo";
+                serviceOrder.UpdatedBy = "kundo";
+                _data_repository.ServiceOrders.AddNew(serviceOrder);
                 return RedirectToAction(nameof(Index));
             }
             return View(serviceOrder);
@@ -64,7 +67,7 @@ namespace MyBusiness.WebApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
-        {
+        {  
             try
             {
                 return RedirectToAction(nameof(Index));

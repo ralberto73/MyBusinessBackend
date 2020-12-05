@@ -19,7 +19,7 @@ namespace MyBusiness.DataAccess
             db = new AdoSqlHelper(connection_string);
         }
 
-        public int AddNew(ServiceOrder new_service, string user)
+        public int AddNew(ServiceOrder new_service )
         {
             Object result = db.GetValueFromSp<int>("ServiceOrders_AddNew"
                                 , new List<SqlParameter>() {   new SqlParameter("@ServiceOrderStatusId ",    System.Data.SqlDbType.Int)
@@ -42,10 +42,7 @@ namespace MyBusiness.DataAccess
                                                               ,new SqlParameter("@BillableAmount",           System.Data.SqlDbType.Decimal,18)
                                                               ,new SqlParameter("@LaborAmount",              System.Data.SqlDbType.Decimal,18)
                                                               ,new SqlParameter("@PartCost",                 System.Data.SqlDbType.Decimal,18)  
-                                                              ,new SqlParameter("@CreatedBy",                System.Data.SqlDbType.VarChar,100)
-                                                              ,new SqlParameter("@UpdatedBy",                System.Data.SqlDbType.VarChar,100)
-                                                              ,new SqlParameter("@CreationDate",             System.Data.SqlDbType.DateTime)
-                                                              ,new SqlParameter("@LastUpdateDate",           System.Data.SqlDbType.DateTime)           
+                                                              ,new SqlParameter("@User",                     System.Data.SqlDbType.VarChar,100)           
                                                          }
                                 , new_service.ServiceOrderStatusId
                                 , new_service.Contact
@@ -68,9 +65,6 @@ namespace MyBusiness.DataAccess
                                 , new_service.LaborAmount
                                 , new_service.PartCost
                                 , new_service.CreatedBy
-                                , new_service.UpdatedBy
-                                , new_service.CreationDate
-                                , new_service.LastUpdateDate
                                 );
             return Convert.ToInt32(result);
         }

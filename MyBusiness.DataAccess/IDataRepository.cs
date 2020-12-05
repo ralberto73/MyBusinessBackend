@@ -6,8 +6,8 @@
          InsuranceRepository Insurances { get; }
         SupplierRepository   Suppliers { get; }
         ProductsRepository   Products { get; }
-        WorkOrderRepository WorkOrders { get; }
-
+       // WorkOrderRepository WorkOrders { get; }
+        ServiceOrderRepository ServiceOrders { get; } 
        
 
       
