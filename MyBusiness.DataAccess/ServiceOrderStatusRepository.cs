@@ -26,29 +26,37 @@ namespace MyBusiness.DataAccess
                                                   , new List<SqlParameter>() { new SqlParameter("@BarandID", System.Data.SqlDbType.Int) }
                                                   , id).FirstOrDefault<Brand>();
             }
-
-            public bool Update(Brand brand, string user)
+*/
+            public bool Update(ServiceOrderStatus service_order_status, string user)
             {
-                object result = db.GetValueFromSp<int>("Brands_Update"
-                                                , new List<SqlParameter>() {  new SqlParameter("@BarandID",  System.Data.SqlDbType.Int),
-                                                                          new SqlParameter("@BrandName", System.Data.SqlDbType.VarChar,100),
-                                                                          new SqlParameter("@user",      System.Data.SqlDbType.VarChar,100) }
-                                                , brand.BrandId
-                                                , brand.BrandName
+                object result = db.GetValueFromSp<int>("ServiceOrderStatus_Update"
+                                                , new List<SqlParameter>() {  new SqlParameter("@ServiceOrderStatusId", System.Data.SqlDbType.Int),
+                                                                              new SqlParameter("@StatusName"          , System.Data.SqlDbType.VarChar,20),
+                                                                              new SqlParameter("@Color"               , System.Data.SqlDbType.VarChar,20),
+                                                                              new SqlParameter("@IconPicture"         , System.Data.SqlDbType.VarChar, 50),
+                                                                              new SqlParameter("@User"                , System.Data.SqlDbType.VarChar, 100) }
+                                                , service_order_status.ServiceOrderStatusId
+                                                , service_order_status.StatusName
+                                                , service_order_status.Color
+                                                , service_order_status.IconPicture
                                                 , user);
                 return true; // (result > 0);
             }
 
-            public int AddNew(Brand brand, string user)
+            public int AddNew(ServiceOrderStatus service_order_status, string user)
             {
                 Object result = db.GetValueFromSp<int>("Brands_AddNew"
-                                    , new List<SqlParameter>() {   new SqlParameter("@BrandName", System.Data.SqlDbType.VarChar,100),
-                                                               new SqlParameter("@user",      System.Data.SqlDbType.VarChar,100) }
-                                    , brand.BrandName
+                                    , new List<SqlParameter>() {  new SqlParameter("@StatusName"          , System.Data.SqlDbType.VarChar,20),
+                                                                  new SqlParameter("@Color"               , System.Data.SqlDbType.VarChar,20),
+                                                                  new SqlParameter("@IconPicture"         , System.Data.SqlDbType.VarChar, 50),
+                                                                  new SqlParameter("@User"                , System.Data.SqlDbType.VarChar, 100) }
+                                    , service_order_status.StatusName
+                                    , service_order_status.Color
+                                    , service_order_status.IconPicture
                                     , user);
                 return Convert.ToInt32(result);
             }
-
+/*
             public int Delete(Brand brand)
             {
                 Object result = db.GetValueFromSp<int>("Brands_Delete"
