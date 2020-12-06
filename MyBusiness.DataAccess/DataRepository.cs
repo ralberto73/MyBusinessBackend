@@ -20,7 +20,9 @@ namespace MyBusiness.DataAccess
         public ServiceOrderRepository ServiceOrders { get; }
         public ProductsRepository Products { get; }
 
-        
+        public ServiceOrderStatusRepository ServiceOrdersStatus { get; }
+
+
         public DataRepository(string connection_string)
         {
             _connection_string = connection_string;
@@ -29,7 +31,8 @@ namespace MyBusiness.DataAccess
             Suppliers     = new SupplierRepository(_connection_string);
             ServiceOrders = new ServiceOrderRepository(_connection_string);
             Products      = new ProductsRepository(_connection_string);
-
+            ServiceOrdersStatus = new ServiceOrderStatusRepository(_connection_string);
+            //ServiceOrders
         }
 
 

@@ -7,9 +7,10 @@
         SupplierRepository   Suppliers { get; }
         ProductsRepository   Products { get; }
        // WorkOrderRepository WorkOrders { get; }
-        ServiceOrderRepository ServiceOrders { get; } 
-       
+        ServiceOrderRepository ServiceOrders { get; }
 
-      
+        ServiceOrderStatusRepository ServiceOrdersStatus { get; }
+
+
     }
 }
