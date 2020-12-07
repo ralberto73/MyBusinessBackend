@@ -20,7 +20,7 @@ namespace MyBusiness.DataAccess
         }
 
         //  Get all Service orders 
-        public List<ServiceOrder> GetAll() => db.GetListFromSp<ServiceOrder>("ServiceOrders_GetAll", null, null);
+        public List<ServiceOrderListModel> GetAll() => db.GetListFromSp<ServiceOrderListModel>("ServiceOrders_GetAll", null, null);
 
         public int AddNew(ServiceOrder new_service )
         {
