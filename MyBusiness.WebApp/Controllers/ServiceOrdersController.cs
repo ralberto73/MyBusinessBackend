@@ -134,11 +134,18 @@ namespace MyBusiness.WebApp.Controllers
                                Value = s.SupplierId.ToString(),
                                Text = s.SupplierName
                            }).ToList();
-            ViewData["PaymentMethod"] = new List<SelectListItem>() {
+            ViewData["PaymentMethodList"] = new List<SelectListItem>() {
                                                 new SelectListItem { Value="-" ,Text = "Select Payment Method" },
                                                 new SelectListItem { Value="P" ,Text = "Personal Payment" },
                                                 new SelectListItem { Value="I" ,Text = "Insurance" }
                                             };
+           ViewData["YearList"] = Enumerable.Range(DateTime.Now.Year - 30, 33)
+                                  .Reverse<int>()
+                                  .Select ( i => new SelectListItem
+                                  {
+                                      Value = i.ToString(),
+                                      Text = i.ToString()
+                                  }).ToList();
 
         }
     }

@@ -106,6 +106,11 @@
             </div>
             <div class="tab">
                 <div class="form-group">
+                    <label asp-for="Year" class="control-label"></label>
+                    <select asp-for="Year" asp-items="@((List<SelectListItem>)ViewData["YearList"])" class="form-control">
+                    </select>
+                </div>
+                <div class="form-group">
                     <label asp-for="ProductId" class="control-label"></label>
                     <select asp-items="@((List<SelectListItem>)ViewData["ProductList"])" class="form-control">
                         <option value="">Pick one</option>
@@ -130,11 +135,8 @@
                     <input asp-for="SubModel" class="form-control" autocomplete="off" />
                     <span asp-validation-for="SubModel" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Year" class="control-label"></label>
-                    <input asp-for="Year" class="form-control" autocomplete="off" />
-                    <span asp-validation-for="Year" class="text-danger"></span>
-                </div>
+
+
             </div>
             <div class="tab">
                 <div class="form-group">
@@ -188,7 +190,7 @@
             <div class="tab">
                 <div class="form-group">
                     <label asp-for="PaymentMethod" class="control-label"></label>
-                    <select asp-for="PaymentMethod" asp-items="@((List<SelectListItem>)ViewData["PaymentMethod"])" class="form-control">
+                    <select asp-for="PaymentMethod" asp-items="@((List<SelectListItem>)ViewData["PaymentMethodList"])" class="form-control">
                     </select>
                 </div>
                 <div class="form-group">
