@@ -22,7 +22,7 @@ namespace MyBusiness.WebApp.Controllers
         // GET: ServiceOrdersController
         public ActionResult Index()
         {
-            return View();
+            return View(_data_repository.ServiceOrders.GetAll());
         }
 
         // GET: ServiceOrdersController/Details/5

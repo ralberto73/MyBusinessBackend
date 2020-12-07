@@ -10,7 +10,7 @@ namespace MyBusiness.Models
     public class ServiceOrder
     {
         [Key]
-        public int  ServiceOrderId{ get; set; }
+        public long  ServiceOrderId{ get; set; }
         public int ServiceOrderStatusId { get; set; }
 
         [Display(Name = "Contact")]

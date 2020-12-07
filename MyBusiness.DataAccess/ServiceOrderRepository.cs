@@ -19,6 +19,9 @@ namespace MyBusiness.DataAccess
             db = new AdoSqlHelper(connection_string);
         }
 
+        //  Get all Service orders 
+        public List<ServiceOrder> GetAll() => db.GetListFromSp<ServiceOrder>("ServiceOrders_GetAll", null, null);
+
         public int AddNew(ServiceOrder new_service )
         {
             Object result = db.GetValueFromSp<int>("ServiceOrders_AddNew"

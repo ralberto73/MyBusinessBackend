@@ -14,10 +14,16 @@ namespace MyBusiness.WebApp.Controllers
         {
             _data_repository = data_repository;
         }
+
+        /// <summary>
+        ///   List of posibles Services Order Status 
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
-        {
-            var a = _data_repository.ServiceOrdersStatus.GetAll().ToList();
-            return View(a);
+        {            
+            return View(  _data_repository.ServiceOrdersStatus
+                                          .GetAll()
+                                          .ToList() );
         }
     }
 }

@@ -113,7 +113,7 @@ namespace MyBusiness.DataAccess
                 var type = result.GetType();
                 // Get the PropertyInfo object by passing the property name.
                 PropertyInfo myPropInfo = type.GetProperty(property_name);
-                if (myPropInfo != null)
+                if (myPropInfo != null &&  reader[property_name] != null )
                     // Fill  the property.
                     myPropInfo.SetValue(result, reader[property_name], null);
             }
