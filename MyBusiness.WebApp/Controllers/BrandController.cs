@@ -73,11 +73,11 @@ namespace MyBusiness.WebApp.Controllers
             }
         }
 
-        // GET: BrandController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //// GET: BrandController/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
         // POST: BrandController/Delete/5
         [HttpPost]
@@ -93,5 +93,26 @@ namespace MyBusiness.WebApp.Controllers
                 return View();
             }
         }
+
+        #region APIs
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Json(new { data = _data_repository.Brand.GetAll() });
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            /*
+             * var  
+             
+             */
+            
+            
+            return Json(new { success="true" , message="Delete successfully." });
+        }
+
+        #endregion
     }
 }

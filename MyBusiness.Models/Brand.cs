@@ -8,7 +8,6 @@ namespace MyBusiness.Models
     public partial class Brand
     {
         [Key]
-        [Display(Name = "Id")]
         public int BrandId { get; set; }
         [Required]
         [Display(Name = "Brand")]

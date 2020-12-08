@@ -14,7 +14,7 @@
             <h2 class="text-primary">  &nbsp; Brand List </h2>
         </div>
         <div class="col-6 text-right">
-            <a asp-action="Upset" class="btn btn-primary"> Create New Brand </a>
+            <a asp-action="Upset" class="btn btn-primary"><i class="fad fa-plus"></i> Create New Brand </a>
         </div>
     </div>
 </div>
@@ -22,66 +22,25 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table" id="A1" name="A1">
+
+<table id="tblData" class="table" style="width:100%">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BrandId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BrandName)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreationDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastUpdateDate)
-            </th>
+            <th>id</th>
+            <th>Name</th>
+            <th>Created By</th>
+            <th>Creation Date</th>
+            <th>Update By</th>
+            <th>Last Update </th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BrandId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BrandName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UpdatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreationDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UpdatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastUpdateDate)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.BrandId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.BrandId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.BrandId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
+
 </table>
 
+@section Scripts{ 
+    <script src="~/js/brand.js"></script>
+ }
 
-<script>
-    $(document).ready(function () {
-        $('#A1').DataTable();
-    });
-</script>
+
+
 
