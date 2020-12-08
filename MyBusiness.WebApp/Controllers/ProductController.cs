@@ -42,6 +42,17 @@ namespace MyBusiness.WebApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
-        } 
+        }
+
+        #region APIs
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Json(new { data = _data_repository.Products.GetAll() });
+        }
+
+
+
+        #endregion
     }
 }
