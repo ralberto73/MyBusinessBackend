@@ -23,6 +23,44 @@ namespace MyBusiness.WebApp.Controllers
             return View( _data_repository.Brand.GetAll());
         }
 
+        public IActionResult Upsert(int? id) {
+            Brand brand = new Brand();
+            if (id == null)
+            {
+                return View(brand);
+            }
+            brand = _data_repository.Brand.GetById(id.GetValueOrDefault());
+            if (brand == null)
+            {
+                return NotFound();
+            }
+            return View(brand);
+        }
+
+        #region APIs
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Json(new { data = _data_repository.Brand.GetAll() });
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            /*
+             * var  
+             
+             */
+            
+            
+            return Json(new { success="true" , message="Delete successfully." });
+        }
+
+        #endregion
+    }
+}
+
+/*
         // GET: BrandController/Details/5
         public ActionResult Details(int id)
         {
@@ -93,26 +131,4 @@ namespace MyBusiness.WebApp.Controllers
                 return View();
             }
         }
-
-        #region APIs
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            return Json(new { data = _data_repository.Brand.GetAll() });
-        }
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
-        {
-            /*
-             * var  
-             
-             */
-            
-            
-            return Json(new { success="true" , message="Delete successfully." });
-        }
-
-        #endregion
-    }
-}
+*/
