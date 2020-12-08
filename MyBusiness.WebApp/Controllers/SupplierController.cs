@@ -41,5 +41,17 @@ namespace MyBusiness.WebApp.Controllers
             }
             return View(supplier);
         }
+
+        #region APIs
+            
+        [HttpGet]
+            public IActionResult GetAll()
+            {
+                return Json(new { data = _data_repository.Suppliers.GetAll() });
+            }
+
+
+
+        #endregion
     }
 }
