@@ -7,18 +7,18 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').dataTable({
         "ajax": {
-            "url"      : "/brand/GetAll",
-            "type"     : "GET",
-            "datatype" :"json"
+            "url": "/insurance/GetAll",
+            "type": "GET",
+            "datatype": "json"
         },
         "columns": [
-            { "data": "brandName", "width": "15%" },
+            { "data": "insuranceName", "width": "15%" },
             { "data": "createdBy", "width": "15%" },
             { "data": "creationDate", "width": "15%" },
             { "data": "updatedBy", "width": "15%" },
             { "data": "lastUpdateDate", "width": "15%" },
             {
-                "data": "id",
+                "data": "insuranceId",
                 "render": function (data) {
                     return `<div class="text-center">
                                 <a href="/Admin/category/Upsert/${data}" class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
@@ -35,8 +35,10 @@ function loadDataTable() {
 
         ],
         "language": {
-            "emptyTable":"NO records found"
+            "emptyTable": "NO records found"
         },
-        "width":"100%"
+        "width": "100%"
     });
+
 }
+ 

@@ -1,66 +1,41 @@
-﻿@model IEnumerable<MyBusiness.Models.Insurance>
-
+﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Insurances</h1>
+<br />
+<div class="border backgroundWhite">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-primary">Insurance List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-action="Upsert" class="btn btn-primary"><i class="fas fa-plus"></i> &nbsp; Create New Insurance</a>
+        </div>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.InsuranceId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InsuranceName)
-            </th>
+    <br />
+    <br />
 
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreationDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastUpdateDate)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table id="tblData" class="table table-striped table-bordered" style="width:100%">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InsuranceId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InsuranceName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UpdatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreationDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UpdatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastUpdateDate)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.InsuranceId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.InsuranceId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.InsuranceId">Delete</a>
-                </td>
+                <th>Name</th>
+                <th>Created By</th>
+                <th>Creation Date</th>
+                <th>Update By</th>
+                <th>Last Update </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+    </table>
+</div>
+
+<!-- https://github.com/bhrugen/Uplift -->
+
+@section Scripts{
+    <script src="~/js/Insurance-list.js"></script>
+
+}
+

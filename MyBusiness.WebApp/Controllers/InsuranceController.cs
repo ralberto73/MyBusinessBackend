@@ -93,5 +93,16 @@ namespace MyBusiness.WebApp.Controllers
                 return View();
             }
         }
+
+        #region APIs
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Json(new { data = _data_repository.Insurances.GetAll() });
+        }
+
+
+
+        #endregion
     }
 }

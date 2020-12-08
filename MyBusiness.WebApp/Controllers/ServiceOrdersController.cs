@@ -148,5 +148,26 @@ namespace MyBusiness.WebApp.Controllers
                                   }).ToList();
 
         }
+
+        #region APIs
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Json(new { data = _data_repository.Brand.GetAll() });
+        }
+
+        //[HttpDelete]
+        //public IActionResult Delete(int id)
+        //{
+        //    /*
+        //     * var  
+             
+        //     */
+
+
+        //    return Json(new { success = "true", message = "Delete successfully." });
+        //}
+
+        #endregion
     }
 }
