@@ -8,3 +8,12 @@
 /MyBusiness.Models/bin/Debug/netcoreapp3.1
 /MyBusiness.WebApp/bin/Debug/net5.0
 /MyBusiness.WebApp/obj
+/MyBusiness.Apis/obj/Debug/net5.0/staticwebassets/MyBusiness.Apis.StaticWebAssets.Manifest.cache
+/MyBusiness.Apis/obj/Debug/net5.0/staticwebassets/MyBusiness.Apis.StaticWebAssets.xml
+/MyBusiness.Apis/obj/Debug/net5.0/ref/MyBusiness.Apis.dll
+/MyBusiness.Apis/obj/Debug/net5.0/MyBusiness.Apis.csproj.CopyComplete
+/MyBusiness.Apis/obj/Debug/net5.0/MyBusiness.Apis.dll
+/MyBusiness.Apis/obj/Debug/net5.0/MyBusiness.Apis.genruntimeconfig.cache
+/MyBusiness.Apis/obj/Debug/net5.0/MyBusiness.Apis.MvcApplicationPartsAssemblyInfo.cs
+/MyBusiness.Apis/obj/Debug/net5.0/MyBusiness.Apis.pdb
+/MyBusiness.Apis/obj/Debug/net5.0/MyBusiness.Apis.RazorTargetAssemblyInfo.cache

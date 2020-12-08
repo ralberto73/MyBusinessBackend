@@ -44,3 +44,4 @@ D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\MyBusiness.DataAcc
 D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\MyBusiness.Models.dll
 D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\MyBusiness.DataAccess.pdb
 D:\Working\MyBusinessBackend\MyBusiness.Apis\bin\Debug\net5.0\MyBusiness.Models.pdb
+D:\Working\MyBusinessBackend\MyBusiness.Apis\obj\Debug\net5.0\MyBusiness.Apis.MvcApplicationPartsAssemblyInfo.cs

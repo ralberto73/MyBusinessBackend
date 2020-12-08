@@ -1,15 +1,28 @@
-﻿@model IEnumerable<MyBusiness.Models.Brand>
-
+﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Brands</h1>
+@model IEnumerable<MyBusiness.Models.Brand>
+
+
+
+<div class="border backgroudWhite">
+    <div class="row">
+        <div class="col-6 ">
+            <h2 class="text-primary">  &nbsp; Brand List </h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-action="Upset" class="btn btn-primary"> Create New Brand </a>
+        </div>
+    </div>
+</div>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="A1" name="A1">
     <thead>
         <tr>
             <th>
@@ -64,4 +77,11 @@
         }
     </tbody>
 </table>
+
+
+<script>
+    $(document).ready(function () {
+        $('#A1').DataTable();
+    });
+</script>
 
