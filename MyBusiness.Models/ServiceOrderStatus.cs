@@ -11,7 +11,7 @@ namespace MyBusiness.Models
      
         public int ServiceOrderStatusId { get; set; }
         [Required]
-        [Display(Name = "Brand")]
+        [Display(Name = "Status Name")]
         public string StatusName { get; set; }
 
         [Display(Name = "Color")]

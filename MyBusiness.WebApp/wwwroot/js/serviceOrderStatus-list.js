@@ -7,18 +7,28 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').dataTable({
         "ajax": {
-            "url"      : "/brand/GetAll",
+            "url":     "/ServiceOrderStatus/GetAll",
             "type"     : "GET",
             "datatype" :"json"
         },
         "columns": [
-            { "data": "brandName", "width": "15%" },
+            {
+                "data": "color",
+                "render": function (data) {
+                    return `<div class="text-center">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-circle-fill" fill="${data}">
+                              <circle cx="8" cy="8" r="8" />
+                            </svg>
+                           </div>`;
+                 },"width": "5%"
+            },
+            { "data": "statusName", "width": "10%" },
             { "data": "createdBy", "width": "15%" },
             { "data": "creationDate", "width": "15%" },
             { "data": "updatedBy", "width": "15%" },
             { "data": "lastUpdateDate", "width": "15%" },
             {
-                "data": "id",
+                "data": " serviceOrderStatusId",
                 "render": function (data) {
                     return `<div class="text-center">
                                 <a href="/Admin/category/Upsert/${data}" class='btn btn-success text-white' style='cursor:pointer; width:100px;'>

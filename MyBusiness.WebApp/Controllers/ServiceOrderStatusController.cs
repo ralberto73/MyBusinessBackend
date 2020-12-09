@@ -25,5 +25,14 @@ namespace MyBusiness.WebApp.Controllers
                                           .GetAll()
                                           .ToList() );
         }
+    #region APIs
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Json(new { data = _data_repository.ServiceOrdersStatus.GetAll() });
+        }
+    #endregion
     }
+
 }
