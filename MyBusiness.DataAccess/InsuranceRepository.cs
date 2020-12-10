@@ -27,14 +27,14 @@ namespace MyBusiness.DataAccess
                                                    , id).FirstOrDefault<Insurance>();           
         }
 
-        public bool Update(Insurance Insurance , string user) 
+        public bool Update(Insurance insurance , string user) 
         {
                   object result = db.GetValueFromSp<int>("Insurances_Update"
                                                   , new List<SqlParameter>() {  new SqlParameter("@InsuranceID",  System.Data.SqlDbType.Int),
                                                                                 new SqlParameter("@InsuranceName", System.Data.SqlDbType.VarChar,100),
                                                                                 new SqlParameter("@user",      System.Data.SqlDbType.VarChar,100) }
-                                                  , Insurance.InsuranceId
-                                                  , Insurance.InsuranceName
+                                                  , insurance.InsuranceId
+                                                  , insurance.InsuranceName
                                                   , user);
                   return true; // (result > 0);
          }
