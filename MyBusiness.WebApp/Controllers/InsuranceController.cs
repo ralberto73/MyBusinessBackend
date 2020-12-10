@@ -62,57 +62,6 @@ namespace MyBusiness.WebApp.Controllers
             }
             return View(insurance);
         }
-        /*
-                // GET: InsuranceController/Details/5
-                public ActionResult Details(int id)
-                {
-                    return View();
-                }
-
-                // GET: InsuranceController/Create
-                public ActionResult Create()
-                {
-                    return View();
-                }
-
-                // POST: Insurances/Create
-                // To protect from overposting attacks, enable the specific properties you want to bind to.
-                // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-
-                [HttpPost]
-                [ValidateAntiForgeryToken]
-                public async Task<IActionResult> Create([Bind("InsuranceName")] Insurance insurance)
-                {
-                    if (ModelState.IsValid)
-                    {
-                        int i = _data_repository.Insurances.AddNew(insurance, "raul");
-                        // await _context.SaveChangesAsync();
-                        return RedirectToAction(nameof(Index));
-                    }
-                    return View(insurance);
-                }
-
-                // GET: InsuranceController/Edit/5
-                public ActionResult Edit(int id)
-                {
-                    return View();
-                }
-                // POST: InsuranceController/Edit/5
-                [HttpPost]
-                [ValidateAntiForgeryToken]
-                public ActionResult Edit(int id, IFormCollection collection)
-                {
-                    try
-                    {
-                        return RedirectToAction(nameof(Index));
-                    }
-                    catch
-                    {
-                        return View();
-                    }
-                }
-        */
-
 
 
         // POST: InsuranceController/Delete/5

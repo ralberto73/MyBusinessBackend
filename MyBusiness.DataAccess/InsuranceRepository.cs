@@ -27,6 +27,16 @@ namespace MyBusiness.DataAccess
                                                    , id).FirstOrDefault<Insurance>();           
         }
 
+        public int AddNew(Insurance Insurance, string user)
+        {
+                  Object result = db.GetValueFromSp<int>("Insurances_AddNew"
+                                      , new List<SqlParameter>() {   new SqlParameter("@InsuranceName", System.Data.SqlDbType.VarChar,100),
+                                                                     new SqlParameter("@user",      System.Data.SqlDbType.VarChar,100) }
+                                      , Insurance.InsuranceName
+                                      , user);
+                  return Convert.ToInt32(result);
+        }
+
         public bool Update(Insurance insurance , string user) 
         {
                   object result = db.GetValueFromSp<int>("Insurances_Update"
@@ -39,15 +49,7 @@ namespace MyBusiness.DataAccess
                   return true; // (result > 0);
          }
 
-        public int AddNew(Insurance Insurance, string user)
-        {
-                  Object result = db.GetValueFromSp<int>("Insurances_AddNew"
-                                      , new List<SqlParameter>() {   new SqlParameter("@InsuranceName", System.Data.SqlDbType.VarChar,100),
-                                                                     new SqlParameter("@user",      System.Data.SqlDbType.VarChar,100) }
-                                      , Insurance.InsuranceName
-                                      , user);
-                  return Convert.ToInt32(result);
-        }
+
 
         public int Delete(int id)
         {

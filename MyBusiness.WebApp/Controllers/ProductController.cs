@@ -27,18 +27,42 @@ namespace MyBusiness.WebApp.Controllers
             return View();
         }
 
-        // POST: Products/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //  Update and Insert  Action 
+        //  if id is null => Insert 
+        //        else    => Insert
+        public IActionResult Upsert(int? id)
+        {
+            Product product = new Product();
+            if (id == null)
+            {
+                return View(product);
+            }
+            product = _data_repository.Products.GetById(id.GetValueOrDefault());
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
 
+
+        //  Post 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductName")] Product product)
+        public IActionResult Upsert(Product product)
         {
             if (ModelState.IsValid)
             {
-                int i = _data_repository.Products.AddNew(product, "raul");
-                // await _context.SaveChangesAsync();
+                if (product.ProductId == 0)
+                {
+                    // _unitOfWork.Category.Add(category);
+                    _data_repository.Products.AddNew(product, "insert user");
+                }
+                else
+                {
+                    //  _unitOfWork.Category.Update(category);
+                    _data_repository.Products.Update(product, "user update");
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
@@ -51,7 +75,21 @@ namespace MyBusiness.WebApp.Controllers
             return Json(new { data = _data_repository.Products.GetAll() });
         }
 
-
+        /// <summary>
+        ///   Deletes a Product
+        /// </summary>
+        /// <param name="id">Product Id</param>
+        /// <returns></returns>
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            int rows_deleted = _data_repository.Products.Delete(id); // <--
+            if (rows_deleted == 0)
+            {
+                return Json(new { success = false, message = "Error while deleting." });
+            }
+            return Json(new { success = "true", message = "Delete successfully." });
+        }
 
         #endregion
     }
