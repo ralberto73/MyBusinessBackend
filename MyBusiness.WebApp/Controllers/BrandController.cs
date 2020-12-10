@@ -74,12 +74,11 @@ namespace MyBusiness.WebApp.Controllers
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            /*
-             * var  
-             
-             */
-            
-            
+            int rows_deleted = _data_repository.Brand.Delete(id);
+            if ( rows_deleted == 0 )
+            {
+                return Json(new { success = false, message = "Error while deleting." });
+            }
             return Json(new { success="true" , message="Delete successfully." });
         }
 
