@@ -11,18 +11,23 @@ namespace MyBusiness.WebApp.Controllers
 {
     public class BrandController : Controller
     {
+        //  https://github.com/bhrugen/Uplift/blob/master/Uplift/Areas/Admin/Controllers/CategoryController.cs
+
         private IDataRepository _data_repository;
         public BrandController(IDataRepository data_repository)
         {
             _data_repository = data_repository;
         }
         
-        // GET: BrandController
+        //  The main Get  
         public ActionResult Index()
         {
             return View( _data_repository.Brand.GetAll());
         }
 
+        //  Update and Insert  Action 
+        //  if id is null => Insert 
+        //        else    => Insert
         public IActionResult Upsert(int? id) {
             Brand brand = new Brand();
             if (id == null)
@@ -33,6 +38,28 @@ namespace MyBusiness.WebApp.Controllers
             if (brand == null)
             {
                 return NotFound();
+            }
+            return View(brand);
+        }
+
+        //  Post 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert(Brand brand )
+        {
+            if (ModelState.IsValid)
+            {
+                if (brand.BrandId == 0)
+                {
+                    // _unitOfWork.Category.Add(category);
+                    _data_repository.Brand.AddNew(brand, "insert user");
+                }
+                else
+                {
+                    //  _unitOfWork.Category.Update(category);
+                    _data_repository.Brand.Update(brand, "user update");
+                }
+                return RedirectToAction(nameof(Index));
             }
             return View(brand);
         }

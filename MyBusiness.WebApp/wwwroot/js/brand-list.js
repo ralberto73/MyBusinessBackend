@@ -18,10 +18,10 @@ function loadDataTable() {
             { "data": "updatedBy", "width": "15%" },
             { "data": "lastUpdateDate", "width": "15%" },
             {
-                "data": "id",
+                "data": "brandId",
                 "render": function (data) {
                     return `<div class="text-center">
-                                <a href="/Admin/category/Upsert/${data}" class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
+                                <a href="/brand/Upsert/${data}" class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
                                     <i class='far fa-edit'></i> Edit
                                 </a>
                                 &nbsp;
