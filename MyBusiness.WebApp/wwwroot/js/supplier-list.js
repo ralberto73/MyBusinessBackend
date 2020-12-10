@@ -21,7 +21,7 @@ function loadDataTable() {
                 "data": "supplierId",
                 "render": function (data) {
                     return `<div class="text-center">
-                                <a href="/Admin/category/Upsert/${data}" class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
+                                <a href="/supplier/Upsert/${data}" class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
                                     <i class='far fa-edit'></i> Edit
                                 </a>
                                 &nbsp;

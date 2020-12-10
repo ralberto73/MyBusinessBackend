@@ -20,6 +20,46 @@ namespace MyBusiness.WebApp.Controllers
             return View(_data_repository.Suppliers.GetAll());
         }
 
+        //  Update and Insert  Action 
+        //  if id is null => Insert 
+        //        else    => Insert
+        public IActionResult Upsert(int? id)
+        {
+           Supplier supplier = new Supplier();
+            if (id == null)
+            {
+                return View(supplier);
+            }
+            supplier = _data_repository.Suppliers.GetById(id.GetValueOrDefault());
+            if (supplier == null)
+            {
+                return NotFound();
+            }
+            return View(supplier);
+        }
+
+        //  Post 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert(Supplier supplier)
+        {
+            if (ModelState.IsValid)
+            {
+                if (supplier.SupplierId == 0)
+                {
+                    // _unitOfWork.Category.Add(category);
+                    _data_repository.Suppliers.AddNew(supplier, "insert user");
+                }
+                else
+                {
+                    //  _unitOfWork.Category.Update(category);
+                    _data_repository.Suppliers.Update(supplier, "user update");
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(supplier);
+        }
+        /*
         public ActionResult Create()
         {
             return View();
@@ -41,9 +81,9 @@ namespace MyBusiness.WebApp.Controllers
             }
             return View(supplier);
         }
-
+        */
         #region APIs
-            
+
         [HttpGet]
             public IActionResult GetAll()
             {
