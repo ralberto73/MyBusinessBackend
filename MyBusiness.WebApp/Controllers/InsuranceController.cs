@@ -115,28 +115,7 @@ namespace MyBusiness.WebApp.Controllers
 
 
 
-
-        // GET: InsuranceController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
         // POST: InsuranceController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
         #region APIs
         [HttpGet]
         public IActionResult GetAll()
@@ -144,6 +123,16 @@ namespace MyBusiness.WebApp.Controllers
             return Json(new { data = _data_repository.Insurances.GetAll() });
         }
 
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            int rows_deleted = _data_repository.Insurances.Delete(id);
+            if (rows_deleted == 0)
+            {
+                return Json(new { success = false, message = "Error while deleting." });
+            }
+            return Json(new { success = "true", message = "Delete successfully." });
+        }
 
 
         #endregion

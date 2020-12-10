@@ -49,14 +49,18 @@ namespace MyBusiness.DataAccess
                   return Convert.ToInt32(result);
         }
 
-               /*          public int Delete(Insurance Insurance)
-              {
-                  Object result = db.GetValueFromSp<int>("Insurances_Delete"
-                                      , new List<SqlParameter>() { new SqlParameter("@BarandID", System.Data.SqlDbType.Int) }
-                                      , Insurance.InsuranceId);
-                  return Convert.ToInt32(result);
-              }
-      */
+        public int Delete(int id)
+        {
+            Object result = db.GetValueFromSp<int>("Insurances_Delete"
+                                , new List<SqlParameter>() { new SqlParameter("@ID", System.Data.SqlDbType.Int) }
+                                , id);
+            return Convert.ToInt32(result);
+        }
+
+        public int Delete(Insurance insurance)
+        {
+            return this.Delete(insurance.InsuranceId);
+        }
 
     }
 }
