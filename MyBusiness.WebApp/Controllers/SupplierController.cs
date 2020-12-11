@@ -53,35 +53,13 @@ namespace MyBusiness.WebApp.Controllers
                 else
                 {
                     //  _unitOfWork.Category.Update(category);
-                    _data_repository.Suppliers.Update(supplier, "user update");
+                    _data_repository.Suppliers.Update(supplier, "usert update");
                 }
                 return RedirectToAction(nameof(Index));
             }
             return View(supplier);
         }
-        /*
-        public ActionResult Create()
-        {
-            return View();
-        }
 
-        // POST: Suppliers/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SupplierName")] Supplier supplier)
-        {
-            if (ModelState.IsValid)
-            {
-                int i = _data_repository.Suppliers.AddNew(supplier, "raul");
-                // await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(supplier);
-        }
-        */
         #region APIs
 
         [HttpGet]
@@ -90,7 +68,21 @@ namespace MyBusiness.WebApp.Controllers
                 return Json(new { data = _data_repository.Suppliers.GetAll() });
             }
 
-
+        /// <summary>
+        ///   Deletes a Supplier
+        /// </summary>
+        /// <param name="id">Product Id</param>
+        /// <returns></returns>
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            int rows_deleted = _data_repository.Suppliers.Delete(id); // <--
+            if (rows_deleted == 0)
+            {
+                return Json(new { success = false, message = "Error while deleting." });
+            }
+            return Json(new { success = "true", message = "Delete successfully." });
+        }
 
         #endregion
     }

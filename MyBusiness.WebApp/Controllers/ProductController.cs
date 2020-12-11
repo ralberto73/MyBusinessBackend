@@ -21,11 +21,6 @@ namespace MyBusiness.WebApp.Controllers
             return View(_data_repository.Products.GetAll());
         }
 
-        // GET: ProductController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
 
         //  Update and Insert  Action 
         //  if id is null => Insert 
