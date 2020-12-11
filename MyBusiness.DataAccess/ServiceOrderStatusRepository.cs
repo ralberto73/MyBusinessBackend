@@ -19,15 +19,15 @@ namespace MyBusiness.DataAccess
             }
 
             public List<ServiceOrderStatus> GetAll() => db.GetListFromSp<ServiceOrderStatus>("ServiceOrderStatus_GetAll", null, null);
-/*
-            public Brand GetById(int id)
-            {
-                return db.GetListFromSp<Brand>("Brands_GetById"
-                                                  , new List<SqlParameter>() { new SqlParameter("@BarandID", System.Data.SqlDbType.Int) }
-                                                  , id).FirstOrDefault<Brand>();
-            }
-*/
-            public bool Update(ServiceOrderStatus service_order_status, string user)
+
+        public ServiceOrderStatus GetById(int id )
+        {
+            return db.GetListFromSp<ServiceOrderStatus>("ServiceOrderStatus_GetById"
+                                  , new List<SqlParameter>() { new SqlParameter("@Id", System.Data.SqlDbType.Int) }
+                                  , id).FirstOrDefault<ServiceOrderStatus>();
+        }
+
+        public bool Update(ServiceOrderStatus service_order_status, string user)
             {
                 object result = db.GetValueFromSp<int>("ServiceOrderStatus_Update"
                                                 , new List<SqlParameter>() {  new SqlParameter("@ServiceOrderStatusId", System.Data.SqlDbType.Int),
@@ -43,10 +43,18 @@ namespace MyBusiness.DataAccess
                 return true; // (result > 0);
             }
 
-            public int AddNew(ServiceOrderStatus service_order_status, string user)
+        public int Delete(int id)
+        {
+            Object result = db.GetValueFromSp<int>("ServiceOrderStatus_Delete"
+                    , new List<SqlParameter>() { new SqlParameter("@Id", System.Data.SqlDbType.Int) }
+                    , id);
+            return Convert.ToInt32(result);
+        }
+
+        public int AddNew(ServiceOrderStatus service_order_status, string user)
             {
-                Object result = db.GetValueFromSp<int>("Brands_AddNew"
-                                    , new List<SqlParameter>() {  new SqlParameter("@StatusName"          , System.Data.SqlDbType.VarChar,20),
+                Object result = db.GetValueFromSp<int>("ServiceOrderStatus_AddNew"
+                                    , new List<SqlParameter>() {  new SqlParameter("@Name"          , System.Data.SqlDbType.VarChar,20),
                                                                   new SqlParameter("@Color"               , System.Data.SqlDbType.VarChar,20),
                                                                   new SqlParameter("@IconPicture"         , System.Data.SqlDbType.VarChar, 50),
                                                                   new SqlParameter("@User"                , System.Data.SqlDbType.VarChar, 100) }
