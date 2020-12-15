@@ -13,10 +13,10 @@ namespace MyBusiness.WebApp.Controllers
     {
         //  https://github.com/bhrugen/Uplift/blob/master/Uplift/Areas/Admin/Controllers/CategoryController.cs
 
-        private IDataRepository _data_repository;
+        private IDataRepository _data_repository; 
         public BrandController(IDataRepository data_repository)
         {
-            _data_repository = data_repository;
+           _data_repository = data_repository;
         }
         
         //  The main Get  
